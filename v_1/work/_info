@@ -1,0 +1,86 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/dhanu/Desktop/CSD/Processor/v_1
+valu
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+!s110 1755503633
+!i10b 1
+!s100 6O6N>jC4OcWd9PnQe6RkQ2
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IN6ZHcAVj_MN3bCCFz>HiO1
+Z3 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1755503628
+8C:/Users/dhanu/Desktop/CSD/Processor/v_1/alu.sv
+FC:/Users/dhanu/Desktop/CSD/Processor/v_1/alu.sv
+!i122 3
+L0 1 44
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1755503632.000000
+!s107 C:/Users/dhanu/Desktop/CSD/Processor/v_1/alu.sv|
+!s90 -reportprogress|300|-work|work|C:/Users/dhanu/Desktop/CSD/Processor/v_1/alu.sv|
+!i113 1
+o-work work
+Z5 tCvgOpt 0
+vreg_file
+R1
+Z6 !s110 1755501080
+!i10b 1
+!s100 hIKj5knkiCA>9;@KkHXDE3
+R2
+Io[faNbo=4>3>5TZZM;0h10
+R3
+S1
+R0
+w1755500527
+8reg_file.sv
+Freg_file.sv
+!i122 2
+L0 1 35
+R4
+r1
+!s85 0
+31
+Z7 !s108 1755501080.000000
+Z8 !s107 tb_reg_file.sv|reg_file.sv|
+Z9 !s90 -reportprogress|300|-sv|reg_file.sv|tb_reg_file.sv|
+!i113 1
+o-sv
+R5
+vtb_reg_file
+R1
+R6
+!i10b 1
+!s100 Bf48z@g:?ImHKG^FDL6`i1
+R2
+I3`kAE:6TG`YA>:T]fV7^k0
+R3
+S1
+R0
+w1755500833
+8tb_reg_file.sv
+Ftb_reg_file.sv
+!i122 2
+L0 3 75
+R4
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+o-sv
+R5

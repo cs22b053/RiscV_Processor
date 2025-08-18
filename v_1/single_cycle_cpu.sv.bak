@@ -1,0 +1,139 @@
+//
+// Top-Level Module for the Single-Cycle RISC-V CPU
+//
+// - Instantiates and connects all sub-modules to form the datapath.
+//
+module single_cycle_cpu (
+    // Inputs
+    input  logic         clk,
+    input  logic         rst,
+
+    // Outputs for debugging/testing
+    output logic [31:0]  pc_out,        // Expose the current PC value
+    output logic [31:0]  instruction,   // Expose the current instruction
+    output logic [31:0]  alu_result_out // Expose the ALU result
+);
+
+    // --- Internal Wires to Connect Modules ---
+    // PC and Instruction Memory
+    logic [31:0] pc_next, pc_plus_4, branch_target;
+    logic [31:0] read_data_1, read_data_2;
+
+    // Control Unit signals
+    logic        branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write;
+    logic [1:0]  alu_op;
+
+    // Immediate Generator
+    logic [31:0] immediate;
+
+    // ALU
+    logic [31:0] alu_operand_b;
+    logic        zero_flag;
+    
+    // Data Memory
+    logic [31:0] mem_read_data;
+
+    // Write-back data to Register File
+    logic [31:0] write_back_data;
+    
+    // --- Datapath Logic ---
+
+    // 1. Program Counter (PC)
+    pc_reg PC (
+        .clk(clk),
+        .rst(rst),
+        .pc_in(pc_next),
+        .pc_out(pc_out)
+    );
+
+    // 2. Instruction Memory
+    imem IMEM (
+        .read_addr(pc_out),
+        .instruction(instruction)
+    );
+
+    // 3. Register File
+    reg_file REG_FILE (
+        .clk(clk),
+        .rst(rst),
+        .rs1_addr(instruction[19:15]),
+        .rs2_addr(instruction[24:20]),
+        .rd_addr(instruction[11:7]),
+        .rd_wdata(write_back_data),
+        .rd_wen(reg_write),
+        .rs1_rdata(read_data_1),
+        .rs2_rdata(read_data_2)
+    );
+
+    // 4. Immediate Generator
+    imm_gen IMM_GEN (
+        .instruction(instruction),
+        .immediate(immediate)
+    );
+
+    // 5. Main Control Unit
+    control_unit CTRL_UNIT (
+        .opcode(instruction[6:0]),
+        .branch(branch),
+        .mem_read(mem_read),
+        .mem_to_reg(mem_to_reg),
+        .alu_op(alu_op), // This is a simplified 2-bit signal
+        .mem_write(mem_write),
+        .alu_src(alu_src),
+        .reg_write(reg_write)
+    );
+    
+    // MUX for ALU's second operand (from register file or immediate)
+    assign alu_operand_b = alu_src ? immediate : read_data_2;
+
+    // 6. ALU
+    // NOTE: This is a simplified ALU control decoder. A more robust design
+    // would have a separate alu_control module.
+    logic [3:0] alu_control;
+    always_comb begin
+        case(alu_op)
+            2'b00: alu_control = 4'b0001; // R-type: SUB for BEQ, needs more logic for others
+            2'b01: alu_control = 4'b0000; // I-type / Load/Store: ADD
+            2'b10: alu_control = 4'b0001; // B-type: SUB
+            2'b11: alu_control = 4'b1010; // LUI: Copy B
+            default: alu_control = 4'xxxx;
+        endcase
+        // This simplified control only handles a few instructions.
+        // For a full R-type set, you'd decode funct3/funct7 here.
+        if (alu_op == 2'b00) begin // R-type
+             // A real decoder would look at funct3/funct7
+             // For now, let's just make ADD work.
+            if(instruction[31:25] == 7'b0000000 && instruction[14:12] == 3'b000)
+                 alu_control = 4'b0000; // ADD
+            else
+                 alu_control = 4'b0001; // SUB for all other R-types (placeholder)
+        end
+    end
+
+    alu ALU (
+        .operand_a(read_data_1),
+        .operand_b(alu_operand_b),
+        .alu_control(alu_control),
+        .result(alu_result_out),
+        .zero_flag(zero_flag)
+    );
+
+    // 7. Data Memory
+    dmem DMEM (
+        .clk(clk),
+        .addr(alu_result_out),
+        .write_data(read_data_2),
+        .mem_read(mem_read),
+        .mem_write(mem_write),
+        .read_data(mem_read_data)
+    );
+
+    // MUX for the data written back to the register file
+    assign write_back_data = mem_to_reg ? mem_read_data : alu_result_out;
+
+    // Logic to calculate the next PC value
+    assign pc_plus_4 = pc_out + 32'd4;
+    assign branch_target = pc_out + immediate;
+    assign pc_next = (branch && zero_flag) ? branch_target : pc_plus_4;
+
+endmodule
