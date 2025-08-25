@@ -1,0 +1,92 @@
+C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/DataMemory.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/DataMemory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module DataMemory
+
+Top level modules:
+	DataMemory
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/PC.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/PC.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module PC
+
+Top level modules:
+	PC
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Add4.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Add4.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Add4
+
+Top level modules:
+	Add4
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/BranchCondition.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/BranchCondition.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module BranchCondition
+
+Top level modules:
+	BranchCondition
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/ALU.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/ALU.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ALU
+
+Top level modules:
+	ALU
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/InstructionMemory.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/InstructionMemory.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module InstructionMemory
+
+Top level modules:
+	InstructionMemory
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/WriteBack.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/WriteBack.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module WriteBack
+
+Top level modules:
+	WriteBack
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Controller.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Controller.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Controller
+
+Top level modules:
+	Controller
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Mux2.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Mux2.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Mux2
+
+Top level modules:
+	Mux2
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Processor_TB.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Processor_TB.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Processor_TB
+
+Top level modules:
+	Processor_TB
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/RegisterFile.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/RegisterFile.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module RegisterFile
+
+Top level modules:
+	RegisterFile
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/ImmediateGenerator.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/ImmediateGenerator.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ImmediateGenerator
+
+Top level modules:
+	ImmediateGenerator
+
+} {} {}} C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Processor.sv {1 {vlog -work work -sv -stats=none C:/Users/dhanu/Desktop/temp/RISC-V-Single-Cycle-Processor/Processor.sv
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module Processor
+
+Top level modules:
+	Processor
+
+} {} {}}
