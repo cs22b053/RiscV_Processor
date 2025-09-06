@@ -1,0 +1,25 @@
+                           +------------------------------+
+                           |          VexRiscv            |
+                           |------------------------------|
+dBus_cmd_valid   --------->|                              |
+dBus_cmd_ready   <---------|                              |
+dBus_cmd_payload_wr  ----->|  MEM stage (LSU)             |
+dBus_cmd_payload_address ->|     address                  |
+dBus_cmd_payload_data  --->|     store data               |----> WB
+dBus_cmd_payload_size  --->|     size (0=1B,1=2B,2=4B)    |
+dBus_cmd_payload_mask  --->|     byte strobes             |
+                           |                              |
+dBus_rsp_ready    -------->|                              |
+dBus_rsp_data     <--------|     load data                |
+dBus_rsp_error    <--------|     access fault             |
+                           +------------------------------+
+
+              +---------------- Simple D$ / RAM adapter -----------------+
+              |                                                          |
+              |  if (cmd_valid && wr)   write(mem, address, data, mask)  |
+              |  if (cmd_valid && !wr)  read(mem, address) and return    |
+              |                                                          |
+              |  dBus_cmd_ready = 1'b1                                   |
+              |  dBus_rsp_valid == dBus_rsp_ready (1-cycle TB latency)   |
+              +----------------------------------------------------------+
+

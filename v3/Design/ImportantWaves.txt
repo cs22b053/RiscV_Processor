@@ -1,0 +1,30 @@
+# IF/ID
+add wave -hex /tb_debug/dut/iBus_cmd_payload_pc
+add wave -hex /tb_debug/dut/iBus_rsp_payload_inst
+add wave /tb_debug/dut/iBus_cmd_valid /tb_debug/dut/iBus_rsp_valid
+add wave -hex /tb_debug/dut/decode_FORMAL_PC_NEXT
+add wave -hex /tb_debug/dut/decode_INSTRUCTION
+
+# ID/EX controls
+add wave /tb_debug/dut/decode_ALU_CTRL_string
+add wave /tb_debug/dut/decode_SHIFT_CTRL_string
+add wave /tb_debug/dut/decode_BRANCH_CTRL_string
+add wave -hex /tb_debug/dut/decode_RegFilePlugin_rs1Data
+add wave -hex /tb_debug/dut/decode_RegFilePlugin_rs2Data
+
+# EX/MEM
+add wave -hex /tb_debug/dut/execute_SRC1
+add wave -hex /tb_debug/dut/execute_SRC2
+add wave /tb_debug/dut/execute_BRANCH_DO
+add wave -hex /tb_debug/dut/execute_BRANCH_CALC
+add wave -hex /tb_debug/dut/dBus_cmd_payload_address
+add wave -hex /tb_debug/dut/dBus_cmd_payload_data
+add wave /tb_debug/dut/dBus_cmd_payload_wr
+
+# MEM/WB
+add wave -hex /tb_debug/dut/dBus_rsp_data
+add wave -hex /tb_debug/dut/memory_REGFILE_WRITE_DATA
+add wave /tb_debug/dut/memory_REGFILE_WRITE_VALID
+add wave -hex /tb_debug/dut/writeBack_REGFILE_WRITE_DATA
+add wave /tb_debug/dut/writeBack_REGFILE_WRITE_VALID
+

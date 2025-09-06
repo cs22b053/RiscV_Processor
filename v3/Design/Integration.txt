@@ -1,0 +1,30 @@
+                           +-------------------------- VexRiscv --------------------------+
+                           |                                                               |
+ clk --------------------->| clk                                                           |
+ toplevelReset ---+------->| reset                                                         |
+                  |        |                                                               |
+ DebugPlugin      +--or--> | debugReset  --->(internal) debug_resetOut ----+              |
+                  |        |                                               (or)            |
+                  |        |                                                               |
+ IRQs --------->  |        |  CsrPlugin  -> trap/ret -> Branch/Trap mux -> IF (PC)        |
+                  |        |                                                               |
+                  |        |  IBus (fetch)                                                 |
+                  |        |    iBus_cmd_valid/ready / _payload_pc                         |
+                  |        |    iBus_rsp_valid / _payload_inst / _error                    |
+                  |        |                                                               |
+                  |        |  DBus (load/store)                                            |
+                  |        |    dBus_cmd_valid/ready / _payload_{address,wr,data,size,mask}|
+                  |        |    dBus_rsp_ready / _{data,error}                             |
+                  |        |                                                               |
+                  |        |  Pipeline: IF -> ID -> EX -> MEM -> WB                        |
+                  |        |   - HazardSimplePlugin (bypass/stall/flush)                   |
+                  |        |   - RegFilePlugin (read@ID, write@WB)                         |
+                  |        |   - IntAlu/FullBarrelShifter/Mul/Div                          |
+                  |        |                                                               |
+                  +--------+---------------------------------------------------------------+
+                                   |                             |
+                                   |                             |
+                                   v                             v
+                        Instruction memory / I$        Data memory / peripherals
+                        (ROM/BRAM/AXI ROM)             (BRAM/AXI/AHB/WB slaves)
+

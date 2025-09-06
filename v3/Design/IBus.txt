@@ -1,0 +1,21 @@
+                           +------------------------------+
+                           |          VexRiscv            |
+                           |------------------------------|
+iBus_cmd_valid  ---------->|                              |
+iBus_cmd_ready  <----------|                              |
+iBus_cmd_payload_pc  ----->|  IF stage (PC generation)    |----> Branch/Trap redirect back to IF
+                           |                              |
+iBus_rsp_valid   <---------|                              |
+iBus_rsp_payload_inst <----|  IF/ID handoff (instruction) |
+iBus_rsp_payload_error <---|                              |
+                           +------------------------------+
+
+               +---------------- Simple I$ / ROM adapter ----------------+
+               |                                                         |
+               |  pc = iBus_cmd_payload_pc                               |
+               |  inst = mem[pc-BASE]                                    |
+               |  iBus_rsp_valid <= iBus_cmd_valid (1-cycle latency)     |
+               |  iBus_rsp_payload_inst <= inst                          |
+               |  iBus_cmd_ready = 1'b1                                  |
+               +---------------------------------------------------------+
+

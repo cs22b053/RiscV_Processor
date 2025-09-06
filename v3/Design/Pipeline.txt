@@ -1,0 +1,12 @@
+         IF                       ID                        EX                         MEM                        WB
++----------------+      +--------------------+     +---------------------+     +---------------------+    +----------------------+
+| iBus_*         |      | decode_*           |     | execute_*           |     | memory_*            |    | writeBack_*          |
+| decode_FORMAL  |----->| RS1/RS2 addr/data  |---->| SRC1/SRC2           |---->| MEMORY_ENABLE/STORE |--->| REGFILE_WRITE_DATA   |
+| _PC_NEXT       |      | ALU/SHIFT/BRANCH   |     | ALU/SHIFT/MUL/DIV   |     | DBus cmd/rsp        |    | REGFILE_WRITE_VALID  |
+| decode_INSTR   |      | CSR op decode      |     | Branch target/cond  |     | READ_DATA           |    | Formated load data   |
+| arbitration_*  |      | arbitration_*      |     | arbitration_*       |     | arbitration_*       |    | arbitration_*        |
++----------------+      +--------------------+     +---------------------+     +---------------------+    +----------------------+
+                                  ^                       ^                       ^                         ^
+                                  |                       |                       |                         |
+                           RegFilePlugin            HazardSimplePlugin (bypasses, stalls, flushes across stages)
+

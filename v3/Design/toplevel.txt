@@ -1,0 +1,17 @@
+                                  VexRiscv
+                             +------------------+
+clk ------------------------->| clk              |
+                              |                  |
+toplevelReset ------+-------->| reset           |
+                    |         |                  |
+                    |  +------< debug_resetOut   |   (from DebugPlugin when enabled)
+                    |  |      |                  |
+timer/external/     |  |      | debugReset ----->|  (DebugPlugin reset domain)
+software IRQs       |  |      |                  |
+   ┌──────────────┐ |  |      +------------------+
+   |              <-+--+---o
+   |  OR / mux         |
+   |  (sync)           +--> Interconnect / Peripherals
+   |                   |       (AHB/AXI/Wishbone/“simple bus”)
+   └───────────────────┘
+

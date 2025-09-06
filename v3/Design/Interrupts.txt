@@ -1,0 +1,12 @@
+timerInterrupt  ----+
+externalInterrupt --+----> VexRiscv.CsrPlugin  ──┐
+softwareInterrupt --+                            │
+                                                    generates trap/ret control:
+                                                    - mtvec target
+                                                    - mepc/mcause update
+                                                    - flush/redirect back to IF
+                                            ┌──────▼──────┐
+                                            │  Branch/    │
+                                            │  Trap MUX   │  ---> IF next PC
+                                            └─────────────┘
+
