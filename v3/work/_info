@@ -1,0 +1,139 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 d/home/venkat-kaushal/RiscV_Processor/v3
+vsimple_mem
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1757151451
+!i10b 1
+!s100 LigKZY;mk1?Z^3N`GJR@g3
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IVSoOQF`bnEVMkbcJc=TF<0
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+Z5 w1757151366
+Z6 8tb_vexriscv.v
+Z7 Ftb_vexriscv.v
+!i122 1
+L0 109 124
+Z8 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z9 !s108 1757151450.000000
+!s107 tb_vexriscv.v|VexRiscv.v|
+Z10 !s90 -sv|+acc|VexRiscv.v|tb_vexriscv.v|
+!i113 1
+Z11 o-sv +acc
+Z12 tCvgOpt 0
+vStreamFifo
+R1
+R2
+!i10b 1
+!s100 O1^2NcU]92[fI93Q`;iDo3
+R3
+ILHnZI[lo9:[bzQ4`E@akz1
+R4
+S1
+R0
+R5
+Z13 8VexRiscv.v
+Z14 FVexRiscv.v
+!i122 1
+L0 3253 94
+R8
+r1
+!s85 0
+31
+R9
+Z15 !s107 tb_vexriscv.v|VexRiscv.v|
+R10
+!i113 1
+R11
+R12
+n@stream@fifo
+vStreamFifoLowLatency
+R1
+R2
+!i10b 1
+!s100 [4Uf4nTTz>4i<o;azX=k50
+R3
+IbXj>Z3e>K=X>@[zDb@eYz0
+R4
+S1
+R0
+R5
+R13
+R14
+!i122 1
+L0 3206 46
+R8
+r1
+!s85 0
+31
+R9
+R15
+R10
+!i113 1
+R11
+R12
+n@stream@fifo@low@latency
+vtb_vexriscv
+R1
+R2
+!i10b 1
+!s100 2G8UcD]UHKoiEj^gU8`W;2
+R3
+IROIPIOJJ63M_0a4_Sj_jJ0
+R4
+S1
+R0
+R5
+R6
+R7
+!i122 1
+L0 3 99
+R8
+r1
+!s85 0
+31
+R9
+R15
+R10
+!i113 1
+R11
+R12
+vVexRiscv
+R1
+R2
+!i10b 1
+!s100 ZoGbICZ7bW97MBzl:WR`H2
+R3
+InBLnFW1D3^FV0lBL>HVJ80
+R4
+S1
+R0
+R5
+R13
+R14
+!i122 1
+L0 7 3198
+R8
+r1
+!s85 0
+31
+R9
+R15
+R10
+!i113 1
+R11
+R12
+n@vex@riscv

@@ -1,0 +1,17 @@
+# vsim -voptargs="+acc" tb_vexriscv 
+# Start time: 15:07:32 on Sep 06,2025
+# Loading sv_std.std
+# Loading work.tb_vexriscv
+# Loading work.VexRiscv
+# Loading work.StreamFifoLowLatency
+# Loading work.StreamFifo
+# Loading work.simple_mem
+run -all
+# 
+# [SIM] PASS: SIM_EXIT=1
+# ** Note: $finish    : tb_vexriscv.v(207)
+#    Time: 435 ns  Iteration: 1  Instance: /tb_vexriscv/mem
+# 1
+# Break in Module simple_mem at tb_vexriscv.v line 207
+# End time: 15:07:41 on Sep 06,2025, Elapsed time: 0:00:09
+# Errors: 0, Warnings: 0
